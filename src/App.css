@@ -109,14 +109,19 @@ body {
 
 .app-link {
   font-weight: bold;
-  color: inherit;
+  color: rgb(0,122,255);
   text-decoration: none;
-  background-color: #C7E9FF;
+  background-color: #efeff4;
   border-radius: 25px;
   text-align: center;
   height: 26px;
   display: inline-grid;
   align-items: center;
+  transition: 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.app-link:hover {
+  background-color: #dfdfe6;
 }
 
 .app-title {
@@ -125,6 +130,10 @@ body {
 
 .app-category {
   opacity: 0.5;
+}
+
+.app-image {
+  height: 48px;
 }
 
 .app-image img {
