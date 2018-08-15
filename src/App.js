@@ -65,6 +65,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1 className="page-title">Apple App Collections</h1>
         <StoriesLink titles={this.state.titles} links={links}/>
       </div>
     );

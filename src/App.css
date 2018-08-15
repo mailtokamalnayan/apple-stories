@@ -55,6 +55,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.page-title {
+  font-weight: bold;
+  font-size: 72px;
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 2.5rem;
+}
+
 .App {
   padding: 2rem 1rem;
 }
@@ -75,10 +83,11 @@ body {
 .list-subtitle {
   font-family: SF Pro Display;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 600;
   line-height: normal;
   font-size: 15px;
   opacity: 0.5;
+  letter-spacing: 0.068em;
 }
 
 .list-container {
