@@ -10,7 +10,6 @@ const links = ['https://itunes.apple.com/in/story/id1286988230',
                   'https://itunes.apple.com/in/story/id1353737320', 
                   'https://itunes.apple.com/in/story/id1296536229', 
                   'https://itunes.apple.com/in/story/id1337185897',
-                  'https://itunes.apple.com/in/story/id1273004226',
                 'https://itunes.apple.com/in/story/id1301964484',
               'https://itunes.apple.com/in/story/id1299409355'];
 
