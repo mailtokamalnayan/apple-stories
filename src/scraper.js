@@ -1,7 +1,7 @@
 const scrapeIt = require("scrape-it")
 var fs = require('fs');
 
-const links = ['https://itunes.apple.com/in/story/id1286988230','https://itunes.apple.com/in/story/id1278619470','https://itunes.apple.com/in/story/id1353737320','https://itunes.apple.com/in/story/id1296536229','https://itunes.apple.com/in/story/id1337185897','https://itunes.apple.com/in/story/id1301964484','https://itunes.apple.com/in/story/id1314402775','https://itunes.apple.com/in/story/id1299409355'];
+const links = ['https://itunes.apple.com/in/story/id1314351295','https://itunes.apple.com/in/story/id1286988230','https://itunes.apple.com/in/story/id1278619470','https://itunes.apple.com/in/story/id1353737320','https://itunes.apple.com/in/story/id1296536229','https://itunes.apple.com/in/story/id1337185897','https://itunes.apple.com/in/story/id1301964484','https://itunes.apple.com/in/story/id1314402775','https://itunes.apple.com/in/story/id1299409355'];
 
 console.log("Something is happening!")
 
