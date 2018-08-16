@@ -9,4 +9,4 @@ WIP
 
 ## Credits
 - This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-- We are using the amazing [scrape-it](https://github.com/IonicaBizau/scrape-it) for scraping the website.
+- We are using the amazing [scrape-it](https://github.com/IonicaBizau/scrape-it) library for scraping the app collection pages.
