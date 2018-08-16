@@ -57,7 +57,7 @@ body {
 
 .page-title {
   font-weight: bold;
-  font-size: 72px;
+  font-size: 36px;
   text-align: center;
   margin-top: 4rem;
   margin-bottom: 2.5rem;
@@ -159,5 +159,8 @@ body {
   }
   .app-item-wraper {
     padding: 1.5rem;
+  }
+  .page-title {
+    font-size: 72px;
   }
 }
