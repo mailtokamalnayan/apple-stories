@@ -9,7 +9,10 @@ const links = ['https://itunes.apple.com/in/story/id1286988230',
                   'https://itunes.apple.com/in/story/id1278619470', 
                   'https://itunes.apple.com/in/story/id1353737320', 
                   'https://itunes.apple.com/in/story/id1296536229', 
-                  'https://itunes.apple.com/in/story/id1337185897'];
+                  'https://itunes.apple.com/in/story/id1337185897',
+                  'https://itunes.apple.com/in/story/id1273004226',
+                'https://itunes.apple.com/in/story/id1301964484',
+              'https://itunes.apple.com/in/story/id1299409355'];
 
 function getTitles() {
   const titles = links.map(function(links) {
@@ -65,7 +68,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1 className="page-title">Apple App Collections</h1>
+        <h1 className="page-title">App Store App Collections</h1>
         <StoriesLink titles={this.state.titles} links={links}/>
       </div>
     );
