@@ -6,6 +6,9 @@ function StoriesLink(props) {
         <div className="app-item-wraper">
           <h3 className="list-subtitle">{title.subtitle}</h3>
           <h2 className="list-title">{title.title}</h2>
+          {title.heroimage && 
+            <div className="list-image"><img src={title.heroimage} /></div>
+          }
             <ul>
               { title.apps.map(appName => 
                 <li className="app-item">

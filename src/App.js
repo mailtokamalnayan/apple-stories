@@ -11,13 +11,18 @@ const links = ['https://itunes.apple.com/in/story/id1286988230',
                   'https://itunes.apple.com/in/story/id1296536229', 
                   'https://itunes.apple.com/in/story/id1337185897',
                 'https://itunes.apple.com/in/story/id1301964484',
+                'https://itunes.apple.com/in/story/id1314402775',
               'https://itunes.apple.com/in/story/id1299409355'];
 
 function getTitles() {
   const titles = links.map(function(links) {
     return scrapeIt(links, {
       title: ".story-header__headline",
-      subtitle: ".story-header__subhead"
+      subtitle: ".story-header__subhead",
+      heroimage: {
+        selector: ".story__thumbnail img",
+        attr: "src"
+      }
     , apps: {
         listItem: ".we-product-collection__item",
         data: {
