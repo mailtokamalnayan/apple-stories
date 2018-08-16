@@ -20,7 +20,7 @@ function StoriesLink(props) {
                       <div className="app-title">{appName.title}</div>
                       <div className="app-category">{appName.category}</div>
                     </div>
-                    <a className="app-link" href={appName.link}>VIEW</a>
+                    <a className="app-link" target={"_blank"} href={appName.link}>VIEW</a>
                 </li> 
               )} 
             </ul>
