@@ -1,4 +1,5 @@
 import React from 'react'
+import LazyLoad from 'react-lazyload';
 import data from './scraped.json'
 
 function StoriesLink(props) {
@@ -10,14 +11,20 @@ function StoriesLink(props) {
             <h3 className="list-subtitle">{title.subtitle}</h3>
               <h2 className="list-title">{title.title}</h2>
               {title.heroimage && 
-                <div className="list-image"><img src={title.heroimage} /></div>
+                <div className="list-image">
+                  <LazyLoad height={373} offset={200}>
+                    <img src={title.heroimage} />
+                  </LazyLoad>
+                </div>
               }
               <ul>
                 { title.apps.map(appName => 
                   <li className="app-item">
                       <picture className="app-image">
-                        <source srcSet={appName.picture} media={'(min-width: 1069px)'} />
-                        <img src={appName.avatar} />
+                        <LazyLoad height={48} offset={100}>
+                          <source srcSet={appName.picture} media={'(min-width: 1069px)'} />
+                          <img src={appName.avatar} />
+                        </LazyLoad>
                       </picture>
                       <div className="app-info">
                         <div className="app-title">{appName.title}</div>
