@@ -11,9 +11,8 @@ function StoriesLink(props) {
             <h3 className="list-subtitle">{title.subtitle}</h3>
               <h2 className="list-title">{title.title}</h2>
               {title.heroimage && 
-              <LazyLoad height={373} throttle={200} offset={200}>
-                <div className="list-image">
-                  <img src={title.heroimage} />
+              <LazyLoad height={388} throttle={200} offset={200}>
+                <div className="list-image" style={{backgroundImage: "url(" + title.heroimage + ")"}}>
                 </div>
               </LazyLoad>
               }
