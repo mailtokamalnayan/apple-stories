@@ -8,10 +8,12 @@
     "fs": "^0.0.1-security",
     "google-spreadsheet": "^2.0.5",
     "react": "^16.4.2",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.4.2",
     "react-lazyload": "^2.3.0",
     "react-promise": "^2.0.3",
     "react-scripts": "1.1.4",
+    "react-transition-group": "^2.4.0",
     "scrape-it": "^5.0.5"
   },
   "scripts": {
