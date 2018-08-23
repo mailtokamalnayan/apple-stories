@@ -43,7 +43,7 @@ class App extends Component {
         <h1 className="page-title">App Store App Collections</h1>
         <Pagination
               totalRecords={totalBlockNumber}
-              pageLimit={20}
+              pageLimit={12}
               pageNeighbours={0}
               onPageChanged={this.onPageChanged}
             />
