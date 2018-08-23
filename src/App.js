@@ -41,17 +41,17 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="page-title">App Store App Collections</h1>
-        <Pagination
-              totalRecords={totalBlockNumber}
-              pageLimit={12}
-              pageNeighbours={0}
-              onPageChanged={this.onPageChanged}
-            />
         <ul className="list-container">
           {currentBlocks.map(collection => (
             <StoriesLink appList={collection} />
           ))}
           </ul>
+          <Pagination
+              totalRecords={totalBlockNumber}
+              pageLimit={12}
+              pageNeighbours={0}
+              onPageChanged={this.onPageChanged}
+            />
           <footer>
             {currentPage && (
               <div className="footerInfo">
