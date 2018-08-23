@@ -61,7 +61,7 @@ class App extends Component {
         <Pagination
           totalRecords={totalBlockNumber}
           pageLimit={20}
-          pageNeighbours={1}
+          pageNeighbours={0}
           onPageChanged={this.onPageChanged}
         />
         <ul className="list-container">

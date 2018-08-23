@@ -99,12 +99,12 @@ class Pagination extends Component {
 
       if (leftSpill && !rightSpill) {
         const extraPages = range(startPage - singleSpillOffset, startPage - 1);
-        pages = [leftSpillPage, ...extraPages, ...pages];
+        pages = [leftSpillPage, rightSpillPage];
       } else if (!leftSpill && rightSpill) {
         const extraPages = range(endPage + 1, endPage + singleSpillOffset);
-        pages = [...pages, ...extraPages, rightSpillPage];
+        pages = [leftSpillPage, rightSpillPage];
       } else if (leftSpill && rightSpill) {
-        pages = [leftSpillPage, ...pages, rightSpillPage];
+        pages = [leftSpillPage, rightSpillPage];
       }
 
       return [1, ...pages, totalPages];
