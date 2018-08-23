@@ -123,7 +123,7 @@ class Pagination extends Component {
 
     return (
       <Fragment>
-        <nav aria-label="Countries Pagination">
+        <nav aria-label="Pagination">
           <ul className="pagination">
             {pages.map((page, index) => {
               if (page === LEFT_PAGE)
@@ -156,22 +156,22 @@ class Pagination extends Component {
                   </li>
                 );
 
-              return (
-                <li
-                  key={index}
-                  className={`page-item${
-                    currentPage === page ? " active" : ""
-                  }`}
-                >
-                  <a
-                    className="page-link"
-                    href="#"
-                    onClick={e => this.handleClick(page, e)}
-                  >
-                    {page}
-                  </a>
-                </li>
-              );
+              // return (
+              //   <li
+              //     key={index}
+              //     className={`page-item${
+              //       currentPage === page ? " active" : ""
+              //     }`}
+              //   >
+              //     {/* <a
+              //       className="page-link"
+              //       href="#"
+              //       onClick={e => this.handleClick(page, e)}
+              //     >
+              //       {page}
+              //     </a> */}
+              //   </li>
+              // );
             })}
           </ul>
         </nav>
