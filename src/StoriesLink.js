@@ -1,23 +1,25 @@
-import React from 'react'
+import React, { Component, Fragment } from "react";
 import LazyLoad from 'react-lazyload';
-import data from './scraped.json'
+import PropTypes from "prop-types";
 
-function StoriesLink(props) {
-    const listItems = data.appList.map((title) =>
-      <div>
-        {title.apps.length > 0 && 
-        <li className="list-item">
-          <div className="app-item-wraper">
-            <h3 className="list-subtitle">{title.subtitle}</h3>
-              <h2 className="list-title">{title.title}</h2>
-              {title.heroimage && 
+class StoriesLink extends Component {
+  render() {
+    const { subtitle = null, title = null, heroimage = null, apps = {} } =
+      this.props.appList || {};
+    return (
+      <Fragment>
+        {apps.length > 0 && 
+          <li className="list-item">
+            <div className="app-item-wraper">
+              <h3 className="list-subtitle">{subtitle}</h3>
+              <h2 className="list-title">{title}</h2>
+              {heroimage && 
               <LazyLoad height={388} throttle={200} offset={200}>
-                <div className="list-image" style={{backgroundImage: "url(" + title.heroimage + ")"}}>
+                <div className="list-image" style={{backgroundImage: "url(" + heroimage + ")"}}>
                 </div>
-              </LazyLoad>
-              }
-              <ul>
-                { title.apps.map(appName => 
+              </LazyLoad>}
+            <ul>
+                { apps.map(appName => 
                   <li className="app-item">
                       <picture className="app-image">
                         <LazyLoad height={48} offset={100}>
@@ -36,11 +38,16 @@ function StoriesLink(props) {
             </div>
           </li>
         }
-      </div>
+      </Fragment>
     );
-    return (
-      <ul className="list-container">{listItems}</ul>
-    );
+  }
 }
+
+StoriesLink.propTypes = {
+  appList: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default StoriesLink
