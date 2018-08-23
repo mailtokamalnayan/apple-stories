@@ -73,6 +73,25 @@ body {
   border-radius: 12px;
   box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.08);
   margin-bottom: 1rem;
+  position: relative;
+}
+
+.iconLink {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: #efeff4;
+  width: 48px;
+  height: 24px;
+  border-radius: 1rem;
+  display: inline-grid;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.iconLink:hover {
+  background-color: #dfdfe6;
 }
 
 .list-title {
@@ -196,6 +215,10 @@ footer {
     column-gap: 2rem;
     column-fill: balance;
   }
+  .iconLink {
+    opacity: 0;
+    transition: 0.2s ease-in;
+  }
   .list-item {
     margin-bottom: 2rem;
     -webkit-column-break-inside: avoid;
@@ -203,6 +226,9 @@ footer {
     break-inside: avoid;
     display: inline-block;
     width: 100%;
+  }
+  .list-item:hover .iconLink{
+      opacity: 1;
   }
   .app-item-wraper {
     padding: 1.5rem 0;

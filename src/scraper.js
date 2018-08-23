@@ -70,6 +70,8 @@ async.series([
       }).then(({ data, response }) => {
           // console.log(`Status Code: ${response.statusCode}`)
           // console.log(data)
+          var storyLinks = links;
+          data = { ...data,storyLinks};
           obj.appList.push(data);
           var json = JSON.stringify(obj);
           fs.writeFile('scraped.json', json, 'utf8');
