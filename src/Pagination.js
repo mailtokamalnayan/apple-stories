@@ -19,7 +19,16 @@ const range = (from, to, step = 1) => {
 class Pagination extends Component {
   constructor(props) {
     super(props);
-    const { totalRecords = null, pageLimit = 30, pageNeighbours = 0 } = props;
+    this.computePageState();
+    this.state = { currentPage: 1 };
+  }
+
+  computePageState = () => {
+    const {
+      totalRecords = null,
+      pageLimit = 30,
+      pageNeighbours = 0,
+    } = this.props;
 
     this.pageLimit = typeof pageLimit === "number" ? pageLimit : 30;
     this.totalRecords = typeof totalRecords === "number" ? totalRecords : 0;
@@ -30,16 +39,23 @@ class Pagination extends Component {
         : 0;
 
     this.totalPages = Math.ceil(this.totalRecords / this.pageLimit);
-
-    this.state = { currentPage: 1 };
-  }
+  };
 
   componentDidMount() {
     this.gotoPage(1);
   }
 
+  componentDidUpdate(prevProps) {
+    const { shouldResetPrev } = prevProps;
+    const { shouldReset } = this.props;
+    if (shouldResetPrev != shouldReset && shouldReset) {
+      this.computePageState();
+      this.gotoPage(1);
+    }
+  }
+
   gotoPage = page => {
-    const { onPageChanged = f => f } = this.props;
+    const { onPageChanged = f => f, shouldReset } = this.props;
 
     const currentPage = Math.max(0, Math.min(page, this.totalPages));
 
@@ -47,7 +63,8 @@ class Pagination extends Component {
       currentPage,
       totalPages: this.totalPages,
       pageLimit: this.pageLimit,
-      totalRecords: this.totalRecords
+      totalRecords: this.totalRecords,
+      shouldReset,
     };
 
     this.setState({ currentPage }, () => onPageChanged(paginationData));
@@ -182,7 +199,7 @@ Pagination.propTypes = {
   totalRecords: PropTypes.number.isRequired,
   pageLimit: PropTypes.number,
   pageNeighbours: PropTypes.number,
-  onPageChanged: PropTypes.func
+  onPageChanged: PropTypes.func,
 };
 
 export default Pagination;
