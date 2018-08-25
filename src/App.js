@@ -75,14 +75,16 @@ class App extends Component {
 
     return (
       <div className="App">
+        <div className="search-bar-container">
+          <input
+            className="search-bar"
+            type="text"
+            placeholder="Search collections..."
+            value={searchText}
+            onChange={this.onSearchTextChange}
+          />
+        </div>
         <h1 className="page-title">App Store App Collections</h1>
-        <input
-          className="search-bar"
-          type="text"
-          placeholder="Search"
-          value={searchText}
-          onChange={this.onSearchTextChange}
-        />
         {totalBlockNumber > 0 && (
           <div>
             <ul className="list-container">
