@@ -29,7 +29,7 @@ class StoriesLink extends Component {
                       <picture className="app-image">
                         <LazyLoad height={48} offset={100}>
                           <source srcSet={appName.picture} media={'(min-width: 1069px)'} />
-                          <img src={appName.avatar} />
+                          <img alt = {appName.title} src={appName.avatar} />
                         </LazyLoad>
                       </picture>
                       <div className="app-info">
