@@ -48,7 +48,7 @@ class Pagination extends Component {
   componentDidUpdate(prevProps) {
     const { shouldResetPrev } = prevProps;
     const { shouldReset } = this.props;
-    if (shouldResetPrev != shouldReset && shouldReset) {
+    if (shouldResetPrev !== shouldReset && shouldReset) {
       this.computePageState();
       this.gotoPage(1);
     }
@@ -105,8 +105,8 @@ class Pagination extends Component {
 
       pages = range(startPage, endPage);
 
-      const pagesCount = pages.length;
-      const singleSpillOffset = totalNumbers - pagesCount - 1;
+      // const pagesCount = pages.length;
+      // const singleSpillOffset = totalNumbers - pagesCount - 1;
 
       const leftSpill = startPage > 2;
       const rightSpill = endPage < beforeLastPage;
@@ -115,10 +115,10 @@ class Pagination extends Component {
       const rightSpillPage = RIGHT_PAGE;
 
       if (leftSpill && !rightSpill) {
-        const extraPages = range(startPage - singleSpillOffset, startPage - 1);
+        // const extraPages = range(startPage - singleSpillOffset, startPage - 1);
         pages = [leftSpillPage, rightSpillPage];
       } else if (!leftSpill && rightSpill) {
-        const extraPages = range(endPage + 1, endPage + singleSpillOffset);
+        // const extraPages = range(endPage + 1, endPage + singleSpillOffset);
         pages = [leftSpillPage, rightSpillPage];
       } else if (leftSpill && rightSpill) {
         pages = [leftSpillPage, rightSpillPage];
@@ -135,7 +135,7 @@ class Pagination extends Component {
 
     if (this.totalPages === 1) return null;
 
-    const { currentPage } = this.state;
+    // const { currentPage } = this.state;
     const pages = this.fetchPageNumbers();
 
     return (
@@ -146,28 +146,28 @@ class Pagination extends Component {
               if (page === LEFT_PAGE)
                 return (
                   <li key={index} className="page-item">
-                    <a
+                    <button
                       className="page-link"
                       href="#"
                       aria-label="Previous"
                       onClick={this.handleMoveLeft}
                     >
                       <span>Previous</span>
-                    </a>
+                    </button>
                   </li>
                 );
 
               if (page === RIGHT_PAGE)
                 return (
                   <li key={index} className="page-item">
-                    <a
+                    <button
                       className="page-link"
                       href="#"
                       aria-label="Next"
                       onClick={this.handleMoveRight}
                     >
                       <span>Next</span>
-                    </a>
+                    </button>
                   </li>
                 );
 

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import * as JsSearch from "js-search";
-
 import "./App.css";
 import Collections from "./scraped.json";
 import StoriesLink from "./StoriesLink";
