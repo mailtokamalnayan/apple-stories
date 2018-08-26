@@ -6075,6 +6075,14 @@ react-error-overlay@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-4.0.0.tgz#d198408a85b4070937a98667f500c832f86bd5d4"
 
+react-lazyload-fadein@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-lazyload-fadein/-/react-lazyload-fadein-1.1.0.tgz#f1a46f989d00cab2a9593cdbb083f2927c03621f"
+  dependencies:
+    prop-types "^15.6.0"
+    react-lazyload "^2.3.0"
+    react-transition-group "^2.2.1"
+
 react-lazyload@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/react-lazyload/-/react-lazyload-2.3.0.tgz#ccb134223012447074a96543954f44b055dc6185"
@@ -6144,7 +6152,7 @@ react-transition-group@^1.2.0:
     prop-types "^15.5.6"
     warning "^3.0.0"
 
-react-transition-group@^2.4.0:
+react-transition-group@^2.2.1, react-transition-group@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.4.0.tgz#1d9391fabfd82e016f26fabd1eec329dbd922b5a"
   dependencies:

@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import LazyLoad from 'react-lazyload';
+import FadeIn from "react-lazyload-fadein";
 import PropTypes from "prop-types";
 
 class StoriesLink extends Component {
@@ -19,24 +19,28 @@ class StoriesLink extends Component {
               <h3 className="list-subtitle">{subtitle}</h3>
               <h2 className="list-title">{title}</h2>
               {heroimage && 
-              <LazyLoad height={388} throttle={200} offset={200}>
-                <div className="list-image" style={{backgroundImage: "url(" + heroimage + ")"}}>
-                </div>
-              </LazyLoad>}
+                <FadeIn height={388}>
+                  {onload => (
+                    <img alt={title} src={heroimage} onLoad={onload} />
+                  )}
+                </FadeIn>
+              }
             <ul>
                 { apps.map(appName => 
                   <li className="app-item">
-                      <picture className="app-image">
-                        <LazyLoad height={48} offset={100}>
+                    <FadeIn height={49}>
+                      {onload => (
+                        <picture className="app-image">
                           <source srcSet={appName.picture} media={'(min-width: 1069px)'} />
-                          <img alt = {appName.title} src={appName.avatar} />
-                        </LazyLoad>
+                          <img alt={appName.title} src={appName.avatar} onLoad={onload} />
                       </picture>
-                      <div className="app-info">
-                        <div className="app-title">{appName.title}</div>
-                        <div className="app-category">{appName.category}</div>
-                      </div>
-                      <a className="app-link" target={"_blank"} href={appName.link}>VIEW</a>
+                      )}
+                    </FadeIn>
+                    <div className="app-info">
+                      <div className="app-title">{appName.title}</div>
+                      <div className="app-category">{appName.category}</div>
+                    </div>
+                    <a className="app-link" target={"_blank"} href={appName.link}>VIEW</a>
                   </li> 
                 )} 
               </ul>
